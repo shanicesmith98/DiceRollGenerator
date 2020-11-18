@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+
+* {
+  font-family: 'Assistant', sans-serif;
+}
+
+body {
+  text-align: center;
+  background-color: #2B2D42;
+  color: white;
+}
+
+button {
+  font-family: 'Assistant', sans-serif;
+  font-size: 16px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px;
+}
+
+#min, #max {
+  margin: 10px;
+}
+
+#result {
+  color: white;
+  font-size: 24px;
+  margin: 10px;
+}
