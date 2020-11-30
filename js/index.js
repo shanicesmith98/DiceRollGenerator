@@ -1,11 +1,18 @@
 'use strict';
 
 function rollDice() {
-    let output = "Enter your dice range!";
     let min = parseInt(document.getElementById("min").value);
     let max = parseInt(document.getElementById("max").value);
 
     const randFormula = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    let response = validateInput(min, max, randFormula);
+        
+    document.getElementById("result").innerHTML = response;
+}
+
+function validateInput(min, max, num) {
+    let output = "";
 
     if (isNaN(min) || isNaN(max)) {
         output = `Input should be a number!`;
@@ -14,8 +21,8 @@ function rollDice() {
     } else if (min < 0 || max < 0) {
         output = `Input cannot be a negative value!`;
     } else {
-        output = `Your dice rolled: ${randFormula}`;
+        output = `Your dice rolled: ${num}`;
     }
-        
-    document.getElementById("result").innerHTML = output;
+
+    return output;
 }
