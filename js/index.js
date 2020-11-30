@@ -11,6 +11,8 @@ function rollDice() {
         output = `Input should be a number!`;
     } else if (min >= max) {
         output = `Invalid Input, please update your values!`;
+    } else if (min < 0 || max < 0) {
+        output = `Input cannot be a negative value!`;
     } else {
         output = `Your dice rolled: ${randFormula}`;
     }
