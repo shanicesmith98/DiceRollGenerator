@@ -1,8 +1,19 @@
-function randomDice() {
+'use strict';
+
+function rollDice() {
+    let output = "Enter your dice range!";
     let min = parseInt(document.getElementById("min").value);
     let max = parseInt(document.getElementById("max").value);
-    
-    const randFormula = Math.floor(Math.random() * max) + min;
-    
-    document.getElementById("result").innerHTML = "Your dice rolled: " + randFormula;
+
+    const randFormula = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    if (isNaN(min) || isNaN(max)) {
+        output = `Input should be a number!`;
+    } else if (min >= max) {
+        output = `Invalid Input, please update your values!`;
+    } else {
+        output = `Your dice rolled: ${randFormula}`;
+    }
+        
+    document.getElementById("result").innerHTML = output;
 }
