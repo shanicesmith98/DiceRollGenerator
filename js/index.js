@@ -1,10 +1,19 @@
 'use strict';
 
 function rollDice() {
-    let min = parseInt(document.getElementById("min").value);
-    let max = parseInt(document.getElementById("max").value);
+    let min, max, randFormula;
 
-    const randFormula = Math.floor(Math.random() * (max - min + 1)) + min;
+    if (document.getElementById("decimal").checked === false) {
+        min = parseInt(document.getElementById("min").value);
+        max = parseInt(document.getElementById("max").value);
+        randFormula = Math.floor(randomizer(min, max));
+    }
+    
+    if (document.getElementById("decimal").checked === true)  {
+        min = parseFloat(document.getElementById("min").value);
+        max = parseFloat(document.getElementById("max").value);
+        randFormula = randomizer(min, max);
+    }
 
     let response = validateInput(min, max, randFormula);
         
@@ -21,8 +30,14 @@ function validateInput(min, max, num) {
     } else if (min < 0 || max < 0) {
         output = `Input cannot be a negative value!`;
     } else {
-        output = `Your dice rolled: ${num}`;
+        output = `Your dice rolled ... <br> ${num}`;
     }
 
     return output;
+}
+
+function randomizer (min, max) {
+    const randomNum = Math.random() * (max - min + 1) + min;
+
+    return randomNum;
 }
