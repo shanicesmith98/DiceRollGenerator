@@ -7,14 +7,26 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <h1>🎲 Random Dice Generator 🎲</h1>
-    <label>Minimum Value:</label>
-        <input text="Minimum Value" value="1" id="min">
-    <label>Maximum Value:</label>
-        <input text="Maximum Value" value="6" id="max">
+    <main>
+        <h1>🎲 Random Dice Generator 🎲</h1>
 
-    <button type="button" onclick="return rollDice()">Roll the Dice</button>
-    <p id="result"></p>
+        <div>
+            <label>Include decimals?</label>
+            <input type="checkbox" id="decimal">
+        </div>
+
+        <div>
+            <label>Minimum Value:</label>
+                <input text="Minimum Value" value="1" id="min">
+            <label>Maximum Value:</label>
+                <input text="Maximum Value" value="6" id="max">
+            <button type="button" onclick="return rollDice()">Roll the Dice</button>
+        </div>
+
+        <div>
+            <p id="result"></p>
+        </div>
+    </main>
 
     <script src="js/index.js"></script>
 </body>
