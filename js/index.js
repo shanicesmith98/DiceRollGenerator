@@ -26,7 +26,7 @@ function validateInput(min, max, num) {
     if (isNaN(min) || isNaN(max)) {
         output = `Input should be a number!`;
     } else if (min >= max) {
-        output = `Invalid Input, please update your values!`;
+        output = `Invalid Input, minimum cannot be larger than maximum!`;
     } else if (min < 0 || max < 0) {
         output = `Input cannot be a negative value!`;
     } else {
